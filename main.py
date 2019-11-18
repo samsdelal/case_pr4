@@ -2,15 +2,17 @@ from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
 syllable = 0
 check_cyll = 0
-
+sen = 0
 sentence = input('Введите текст: ')
-sen = len(sentence.split('.')) - 1
 words = len(sentence.split(' '))
 alphabet = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
+for i in range(len(sentence)):
+    sen = sentence.count('.') + sentence.count('?') + sentence.count('!')
 print('Предложений:', sen)
 print('Слов:', words)
 #analise = TextBlob(sentence)
 #print(analise.sentiment) #Артем не знает что это
+
 
 leght = len(sentence)
 for i in sentence:
@@ -62,5 +64,6 @@ elif 1040 <= ord(sentence[0]) <= 1105:
         print('Текст трудно читается (для людей с высшим образованием)')
 
 
-print('Тональность текста:', )
+sentence_b = TextBlob(sentence)
+print(sentence_b.sentiment)
 
