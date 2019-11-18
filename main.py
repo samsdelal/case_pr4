@@ -1,3 +1,8 @@
+# Case-study #3
+# Developers:   Kuznetosv B. (50%),
+#               Odoevcev S. (40%),
+#               Makarov a. (50%)
+
 from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
 syllable = 0
