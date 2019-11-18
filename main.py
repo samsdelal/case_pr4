@@ -14,6 +14,7 @@ print('Слов:', words)
 #print(analise.sentiment) #Артем не знает что это
 
 
+
 leght = len(sentence)
 for i in sentence:
     symb = i.lower()
@@ -67,10 +68,19 @@ elif 1040 <= ord(sentence[0]) <= 1105:
 sentence_b = TextBlob(sentence)
 if sentence_b.detect_language() == 'ru':
     sentence_translated = sentence_b.translate(from_lang='ru', to='us')
-    print(sentence_translated)
     sentence_translated = TextBlob(str(sentence_translated))
+    if int(sentence_translated.polarity) < 0:
+        print('Тональность текста: ', 'Не нейтральный')
+    else:
+              print('Тональность текста: ', 'Нейтральный')
     print('Объективность: ', 100 - sentence_translated.subjectivity * 100, '%')
-else:
+else :
+    if int(sentence_b.polarity) < 0:
+        print('Тональность текста: ', 'Не нейтральный')
+    else:
+        print('Тональность текста: ', 'Нейтральный')
     print('Объективность: ', 100 - sentence_b.subjectivity * 100, '%')
+
+
 
 
