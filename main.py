@@ -10,8 +10,6 @@ for i in range(len(sentence)):
     sen = sentence.count('.') + sentence.count('?') + sentence.count('!')
 print('Предложений:', sen)
 print('Слов:', words)
-#analise = TextBlob(sentence)
-#print(analise.sentiment) #Артем не знает что это
 
 
 
